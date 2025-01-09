@@ -149,12 +149,12 @@ if (isDryRun) {
         const ops = flag.environments.map((env) => ({
             "environmentKey": env.key,
             "comment":
-                `Clearing prerequesites on ${flagKey} via ld-toolkit/clear-prereqs`,
+                `Clearing dependencies on ${flagKey} via ld-toolkit/clear-prereqs`,
             "instructions": [{ "kind": "removePrerequisite", "key": flagKey }],
         }));
         for (const op of ops) {
             const res = await patch(
-                `/api/v2/flags/${projectKey}/${flagKey}`,
+                `/api/v2/flags/${projectKey}/${flag.key}`,
                 op,
             );
             if (!res.ok) {
