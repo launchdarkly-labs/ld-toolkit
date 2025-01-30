@@ -218,10 +218,9 @@ if (import.meta.main) {
       
       // Print changes
       changes.forEach(change => {
-        const project = change.flag.split('/')[0]; // Extract project from flag name
         console.log([
           change.date.toISOString(),
-          project,
+          change.project,
           change.environment,
           change.flag,
           change.variations.previous.join(',') || '-',
