@@ -85,7 +85,7 @@ async function* getAuditLogEntries(apiToken: string, after: number, before: numb
       method: 'POST',
       body: JSON.stringify([
         {
-          "resources": ["proj/term-demo:env/*:flag/*"],
+          "resources": ["proj/*:env/*:flag/*"],
           "actions": ["updateTargets"],
           "effect": "allow"
         }
